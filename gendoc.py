@@ -8,7 +8,6 @@ import requests
 docset_name = 'Openvswitch.docset'
 output = docset_name + '/Contents/Resources/Documents'
 doc_base_url = 'http://www.openvswitch.org/support/dist-docs/'
-icon_url = 'http://www.openvswitch.org/assets/vswitch.png'
 
 r = requests.get(doc_base_url)
 soup = bs(r.text, 'html.parser')
@@ -18,9 +17,6 @@ soup = bs(r.text, 'html.parser')
 # create directory
 docpath = output + '/'
 if not os.path.exists(docpath): os.makedirs(docpath)
-with open(docset_name + "/icon.png", 'wb') as icon:
-    r = requests.get(icon_url)
-    icon.write(r.content)
 
 
 def update_db(name, path):
