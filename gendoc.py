@@ -55,7 +55,7 @@ def add_infoplist():
            "    <string>{3}</string>" \
            "</dict>" \
            "</plist>".format(name, name, name, doc_base_url)
-    open(docset_name + '/Contents/info.plist', 'w').write(info)
+    open(docset_name + '/Contents/Info.plist', 'w').write(info)
 
 
 if __name__ == '__main__':
